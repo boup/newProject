@@ -2,19 +2,22 @@ import React from "react";
 import cities from "./Cities";
 import InsideOrBetween from "./InsideOrBetweenCity.js";
 import { Link } from "react-router-dom";
-function Autocomplete() {
+function Home(props) {
   const [text, setValue] = React.useState("");
   const [suggestion, setSuggestion] = React.useState([]);
-
+  {
+    /* Function which transform array of object into array*/
+  }
+  var finalArray = cities.map((arr) => arr.cityName);
+  //console.log(finalArray);
   const onTextChange = (e) => {
     let suggestion = [];
 
     const value = e.target.value;
-    console.log(cities);
     if (value.length > 0) {
       const regex = new RegExp(`${value}`, "i");
-      suggestion = cities.sort().filter((v) => regex.test(v));
-      console.log(suggestion);
+      suggestion = finalArray.sort().filter((v) => regex.test(v));
+      //console.log(suggestion);
     }
     setSuggestion(suggestion);
     setValue(value);
@@ -22,7 +25,8 @@ function Autocomplete() {
   const selectedText = (value) => {
     setValue(value);
     setSuggestion(suggestion);
-    return <InsideOrBetween title={`${text}`} />;
+    return <InsideOrBetween title={`${props.value}`} />;
+    //return ` <InsideOrBetween title=${props.value} />`;
   };
   const renderSuggession = () => {
     if (suggestion.length === 0) {
@@ -33,7 +37,7 @@ function Autocomplete() {
         <ul>
           {suggestion.map((item, index) => (
             <li key={index} onClick={() => selectedText(item)}>
-              <Link to="/insideorbetween">{item}</Link>
+              {<Link to="/insideorbetween">{item}</Link>}
             </li>
           ))}
         </ul>
@@ -55,4 +59,4 @@ function Autocomplete() {
   );
 }
 
-export default Autocomplete;
+export default Home;

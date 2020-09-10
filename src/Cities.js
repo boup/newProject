@@ -1,3 +1,109 @@
-export default `Louga-Dakar-Kaolack-Diourbel-Sedhiou-Tambacounda-Fatick-SaintLouis-Senegal-Sane-Camara-Cisse-Camara`.split(
-  "-"
-);
+const cities = [
+  {
+    id: 1,
+    cityName: "DAKAR",
+    longitude: "17.4677",
+    latitude: "14.7167",
+    line: 17,
+  },
+  {
+    id: 2,
+    cityName: "THIES",
+    longitude: "16.9359",
+    latitude: "14.7910",
+    line: 25,
+  },
+  {
+    id: 3,
+    cityName: "SEDHIOU",
+    longitude: "15.5562",
+    latitude: "12.7046",
+    line: 17,
+  },
+  {
+    id: 4,
+    cityName: "KAOLACK",
+    longitude: "16.0758",
+    latitude: "14.1652",
+    line: 25,
+  },
+  {
+    id: 5,
+    cityName: "KOLDA",
+    longitude: "14.9506",
+    latitude: "12.9107",
+    line: 14,
+  },
+  {
+    id: 6,
+    cityName: "MATAM",
+    longitude: "13.2577",
+    latitude: "15.6600",
+    line: 63,
+  },
+  {
+    id: 7,
+    cityName: "TAMBACOUNDA",
+    longitude: "13.6710",
+    latitude: "13.7726",
+    line: 221,
+  },
+  {
+    id: 8,
+    cityName: "SAINT-LOUIS",
+    longitude: "16.4818",
+    latitude: "16.0326",
+    line: 65,
+  },
+  {
+    id: 9,
+    cityName: "DIOURBEL",
+    longitude: "16.2346",
+    latitude: "14.6561",
+    line: 2,
+  },
+  {
+    id: 10,
+    cityName: "ZIGUINCHOR",
+    longitude: "16.2640",
+    latitude: "12.5641",
+    line: 18,
+  },
+  {
+    id: 11,
+    cityName: "KAFFRINE",
+    longitude: "15.5416",
+    latitude: "14.1052",
+    line: 45,
+  },
+  {
+    id: 12,
+    cityName: "KEDOUGOU",
+    longitude: "12.1747",
+    latitude: "12.5605",
+    line: 54,
+  },
+  {
+    id: 13,
+    cityName: "FATICK",
+    longitude: "16.4111",
+    latitude: "14.3390",
+    line: 58,
+  },
+  {
+    id: 14,
+    cityName: "LOUGA",
+    longitude: "16.2287",
+    latitude: "15.6142",
+    line: 87,
+  },
+  ,
+  {
+    id: 14,
+    cityName: "LOUGA",
+    longitude: "16.2287",
+    latitude: "15.6142",
+    line: 187,
+  },
+];
+export default cities;
