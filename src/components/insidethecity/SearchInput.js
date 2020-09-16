@@ -1,13 +1,19 @@
 import React from "react";
-import cities from "../../Cities";
+import { useHistory, useParams } from "react-router-dom";
 import stops from "../../Stop";
+import { Link } from "react-router-dom";
 import { BsFillForwardFill } from "react-icons/bs";
 import DisplayStop from "./DisplayStop";
+import SearchFunction from "./SearchFunction";
+import SearchResult from "../../SearchResult";
 function SearchInput(props) {
   const [text, setValue] = React.useState("");
   const [text1, setValue1] = React.useState("");
   const [suggestion, setSuggestion] = React.useState([]);
   const [suggestion1, setSuggestion1] = React.useState([]);
+  const [filtered, setFilteredData] = React.useState([]);
+  const history = useHistory();
+
   {
     /* Function which transform array of object into array*/
   }
@@ -39,40 +45,7 @@ function SearchInput(props) {
     setSuggestion(suggestion);
     setValue(value);
   };
-  const ClickMe = () => {
-    if (text !== "" && text1 !== "") {
-      //const newArray = cities.filter((item) => item.cityName === `${text}`);
-      const newArray = stops.filter((item) =>
-        item.stop.filter(
-          (item) => item.stop === `${text}` && item.stop === `${text1}`
-        )
-      );
 
-      //const newArray1 = cities.filter((item) => item.cityName === `${text1}`);
-      //const newArray1 = stops.filter((item) =>item.stop.filter((item) => item === `${text1}`));
-      //const finalArray = newArray.concat(newArray1);
-      //console.log(finalArray);
-      console.log(newArray);
-      //console.log(finalArray1);
-      console.log(stops);
-
-      alert(`Hello from ${text} to ${text1}`);
-      setValue("");
-      setValue1("");
-      newArray.map((item) => {
-        return (
-          <DisplayStop line={item.line} name1={`${text}`} name2={`${text}`} />
-        );
-      });
-    } else {
-      alert("You need to fill at first");
-    }
-    return (
-      <div class="alert alert-warning" role="alert">
-        A simple warning alert—check it out!
-      </div>
-    );
-  };
   const onTextChange1 = (e) => {
     let suggestion1 = [];
 
@@ -96,7 +69,7 @@ function SearchInput(props) {
     //setSuggestion(suggestion);
     setSuggestion1([]);
   };
-  const renderSuggession = (props) => {
+  const renderSuggession = () => {
     if (suggestion.length === 0 && suggestion1.length === 0) {
       return null;
     }
@@ -119,6 +92,37 @@ function SearchInput(props) {
       </>
     );
   };
+  const ClickMe = (e) => {
+    if (text !== "" && text1 !== "") {
+      const newArray = stops.filter(
+        (item) =>
+          item.stop.includes(`${text}`) && item.stop.includes(`${text1}`)
+      );
+      // console.log(newArray);
+      const data = newArray;
+      filtered.push(data);
+      //alert(`Hello from ${text} to ${text1}`);
+      setFilteredData([...filtered]);
+      setValue("");
+      setValue1("");
+      ///console.log(filtered);
+      return (
+        <div>
+          {filtered.map((item, index) => {
+            return <li key={index}>{item.line}</li>;
+          })}
+          <span>${text}</span>
+          <span>${text1}</span>
+        </div>
+      );
+    }
+  };
+  console.log(filtered);
+  const letGo = (e) => {
+    e.preventDefault();
+    //history.push(`/insidecity}`);
+    ClickMe();
+  };
   return (
     <>
       <div id="notebooks">
@@ -140,12 +144,30 @@ function SearchInput(props) {
         <span>Suggestions: {suggestion.length}</span>
         <div
           className="btn btn-success text-warning text-uppercase"
-          onClick={ClickMe}
+          onClick={letGo}
         >
-          <strong> go</strong>
+          <strong>go</strong>
           <BsFillForwardFill className="fa-arrow-left mr-1 pb-1  weight-bold" />
         </div>
       </div>
+      {/*<div className="container mt-5">
+        {filtered &&
+          filtered.map((item, index) => {
+            return (
+              <div>
+                <li className="bg-warning mt-5 text-success" key={index}>
+                  {item.map((item, index) => (
+                    <li key={index}>{item.line}</li>
+                  ))}
+                </li>
+                <p>{text}</p>
+                <p>{text1}</p>
+              </div>
+            );
+          })}
+        </div>*/}
+
+      <div>{filtered && <SearchResult datas={filtered} />}</div>
     </>
   );
 }

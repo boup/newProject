@@ -5,6 +5,7 @@ import "./App.scss";
 import InsideCity from "./components/insidethecity/InsiteCity";
 import InsideOrBetweenCity from "./InsideOrBetweenCity";
 import BetweenCity from "./components/betweencity/BetweenCity";
+import SearchFunction from "./components/insidethecity/SearchFunction";
 function App() {
   return (
     <div className="App">
@@ -13,9 +14,13 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route exact path="/city/">
+            <SearchFunction />
+          </Route>
           <Route exact path="/insideorbetween">
             <InsideOrBetweenCity />
           </Route>
+
           <Route exact path="/insidecity">
             <InsideCity />
           </Route>

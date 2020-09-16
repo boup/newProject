@@ -3,7 +3,7 @@ import SearchInput from "./SearchInput";
 
 function InsiteCity() {
   return (
-    <div className="container">
+    <div className="container text-center">
       <SearchInput />
     </div>
   );

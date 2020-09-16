@@ -2,6 +2,7 @@ import React from "react";
 import cities from "./Cities";
 import InsideOrBetween from "./InsideOrBetweenCity.js";
 import { Link } from "react-router-dom";
+import Traject from "./components/insidethecity/Traject";
 function Home(props) {
   const [text, setValue] = React.useState("");
   const [suggestion, setSuggestion] = React.useState([]);
@@ -45,17 +46,26 @@ function Home(props) {
     );
   };
   return (
-    <div id="notebooks">
-      <input
-        id="query"
-        type="text"
-        onChange={onTextChange}
-        value={text}
-        placeholder="Find your City"
-      />
-      {renderSuggession()}
-      <span>Suggestions: {suggestion.length}</span>
-    </div>
+    <>
+      <section>
+        <div id="notebooks" className="text-center">
+          <input
+            id="query"
+            type="text"
+            onChange={onTextChange}
+            value={text}
+            placeholder="Find your City"
+          />
+          {renderSuggession()}
+          <span>Suggestions: {suggestion.length}</span>
+        </div>
+      </section>
+      <section className="">
+        <div>
+          <Traject className="mt-5" />
+        </div>
+      </section>
+    </>
   );
 }
 
