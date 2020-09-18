@@ -1,4 +1,4 @@
-li {
+.Home {
   list-style: none;
   background-color: rgba(0, 0, 0, 0.05);
   background-image: linear-gradient(
@@ -157,3 +157,13 @@ ul {
   }
 }
 /*end of timeline section*/
+/*section_ins_or_bet*/
+.section_ins_or_bet{
+  position: relative;
+  padding-top:29vh;
+}
+/*InsideCity*/
+.InsideCity{
+  background-color: #3d2b56;
+  border-right-color: 2px solid orangered;
+}

@@ -1,25 +1,33 @@
 import React from "react";
 import { useHistory, useParams } from "react-router-dom";
-import stops from "../../Stop";
+import lineData from "../../Cities";
 import { Link } from "react-router-dom";
 import { BsFillForwardFill } from "react-icons/bs";
 import DisplayStop from "./DisplayStop";
 import SearchFunction from "./SearchFunction";
 import SearchResult from "../../SearchResult";
+import {DataContext} from "../../context/context-api"
 function SearchInput(props) {
   const [text, setValue] = React.useState("");
   const [text1, setValue1] = React.useState("");
   const [suggestion, setSuggestion] = React.useState([]);
   const [suggestion1, setSuggestion1] = React.useState([]);
   const [filtered, setFilteredData] = React.useState([]);
+  //const{lineData}=React.useContext(DataContext);
   const history = useHistory();
-
-  {
+  const line= lineData
+  console.log("Line data:",line);
+  var myarray = line.map((arr) => arr.destination);
+  console.log("myarray:",myarray);
+  
+  { 
     /* Function which transform array of object into array*/
   }
   //var finalArray = cities.map((arr) => arr.cityName);
-  var Array1 = stops.map((arr) => arr.stop);
-  const fiArray1 = Array1.flat(1);
+  //var Array1 = stops.map((arr) => arr.stop);
+  const fiArray1 = myarray.flat(1);
+ 
+ console.log("Flat array",fiArray1);
   //get unique value;
   function getUnique(array) {
     var uniqueArray = [];
@@ -32,7 +40,10 @@ function SearchInput(props) {
     }
     return uniqueArray;
   }
-  const finalArray1 = getUnique(fiArray1);
+  
+  var finalArray1 = getUnique(fiArray1);
+  console.log("final stort",finalArray1);
+  
   const onTextChange = (e) => {
     let suggestion = [];
 
@@ -77,14 +88,14 @@ function SearchInput(props) {
       <>
         <ul>
           {suggestion.map((item, index) => (
-            <li key={index} onClick={() => selectedText(item)}>
+            <li className="Home" key={index} onClick={() => selectedText(item)}>
               {item}
             </li>
           ))}
         </ul>
         <ul>
           {suggestion1.map((item1, index) => (
-            <li key={index} onClick={() => selectedText1(item1)}>
+            <li className="Home" key={index} onClick={() => selectedText1(item1)}>
               {item1}
             </li>
           ))}
@@ -94,22 +105,19 @@ function SearchInput(props) {
   };
   const ClickMe = (e) => {
     if (text !== "" && text1 !== "") {
-      const newArray = stops.filter(
-        (item) =>
-          item.stop.includes(`${text}`) && item.stop.includes(`${text1}`)
-      );
-      // console.log(newArray);
+      const newArray = lineData.filter((item) =>item.destination.includes(`${text}`) && item.destination.includes(`${text1}`));
+     
       const data = newArray;
       filtered.push(data);
       //alert(`Hello from ${text} to ${text1}`);
       setFilteredData([...filtered]);
       setValue("");
       setValue1("");
-      ///console.log(filtered);
+      console.log("Filtered array is",filtered);
       return (
         <div>
           {filtered.map((item, index) => {
-            return <li key={index}>{item.line}</li>;
+            return <li className="Home" key={index}>{item.line}</li>;
           })}
           <span>${text}</span>
           <span>${text1}</span>
@@ -125,7 +133,7 @@ function SearchInput(props) {
   };
   return (
     <>
-      <div id="notebooks">
+      <div id="" className="Home">
         <input
           id="query"
           type="text"
@@ -141,7 +149,7 @@ function SearchInput(props) {
           placeholder="to"
         />
         {renderSuggession()}
-        <span>Suggestions: {suggestion.length}</span>
+        <span className="Home">Suggestions: {suggestion.length}</span>
         <div
           className="btn btn-success text-warning text-uppercase"
           onClick={letGo}
@@ -150,24 +158,9 @@ function SearchInput(props) {
           <BsFillForwardFill className="fa-arrow-left mr-1 pb-1  weight-bold" />
         </div>
       </div>
-      {/*<div className="container mt-5">
-        {filtered &&
-          filtered.map((item, index) => {
-            return (
-              <div>
-                <li className="bg-warning mt-5 text-success" key={index}>
-                  {item.map((item, index) => (
-                    <li key={index}>{item.line}</li>
-                  ))}
-                </li>
-                <p>{text}</p>
-                <p>{text1}</p>
-              </div>
-            );
-          })}
-        </div>*/}
+    
 
-      <div>{filtered && <SearchResult datas={filtered} />}</div>
+      <div>{ <SearchResult datas={filtered} />}</div>
     </>
   );
 }

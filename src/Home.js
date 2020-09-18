@@ -1,16 +1,24 @@
 import React from "react";
-import cities from "./Cities";
+
 import InsideOrBetween from "./InsideOrBetweenCity.js";
 import { Link } from "react-router-dom";
 import Traject from "./components/insidethecity/Traject";
+import {DataContext} from "./context/context-api";
 function Home(props) {
   const [text, setValue] = React.useState("");
   const [suggestion, setSuggestion] = React.useState([]);
+  const {cityData}= React.useContext(DataContext);
+  const[show,setShow]=React.useState(false);
+  //const{findLineByCity}=React.useContext();
+  console.log("City Data",cityData);
+ 
+  
   {
     /* Function which transform array of object into array*/
   }
-  var finalArray = cities.map((arr) => arr.cityName);
-  //console.log(finalArray);
+  //var finalArray = cities.map((arr) => arr.cityName);
+  var finalArray = cityData.map((arr) => arr.cityName);
+  console.log(finalArray);
   const onTextChange = (e) => {
     let suggestion = [];
 
@@ -26,19 +34,23 @@ function Home(props) {
   const selectedText = (value) => {
     setValue(value);
     setSuggestion(suggestion);
-    return <InsideOrBetween title={`${props.value}`} />;
-    //return ` <InsideOrBetween title=${props.value} />`;
+    //setShow(!show);
+    handdleShow();
+    
   };
+  const handdleShow=()=>{setShow(!show)
+  setValue("")}
   const renderSuggession = () => {
     if (suggestion.length === 0) {
       return null;
     }
+    
     return (
       <>
         <ul>
           {suggestion.map((item, index) => (
-            <li key={index} onClick={() => selectedText(item)}>
-              {<Link to="/insideorbetween">{item}</Link>}
+            <li className="Home" key={index} onClick={() => selectedText(item)}>
+              {<Link>{item}</Link>}
             </li>
           ))}
         </ul>
@@ -62,7 +74,11 @@ function Home(props) {
       </section>
       <section className="">
         <div>
-          <Traject className="mt-5" />
+        { 
+              show&&
+                <InsideOrBetween title={text} />
+        }      
+            
         </div>
       </section>
     </>

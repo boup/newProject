@@ -58,30 +58,40 @@ export default function Traject() {
   return (
     <div className="timeline_section">
       <Timeline align="alternate">
-        {data.map((item, index) => (
-          <TimelineItem key={index}>
-            <TimelineOppositeContent>
-              <Typography variant="body2" color="textSecondary">
-                {item.line}
-              </Typography>
-            </TimelineOppositeContent>
-            <TimelineSeparator>
-              <TimelineDot color={`${item.color}`} onClick={handdleChange} />
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent>
-              {change && (
-                <Paper elevation={3} className={classes.paper}>
-                  <Typography variant="h6" component="h1">
-                    {item.value}
-                  </Typography>
-                  <Typography>{item.info}</Typography>
-                </Paper>
-              )}
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
+      {data.map((item,index)=>(
+
+        <TimelineItem key={index}>
+        <TimelineSeparator>
+          <TimelineDot variant="outlined" />
+          <TimelineConnector />
+          
+        </TimelineSeparator>
+      <TimelineContent>{item.value}</TimelineContent>
+      
+      </TimelineItem>
+      ))}
+          </Timeline>
+      {/*
+        <TimelineItem>
+        <TimelineSeparator>
+          <TimelineDot variant="outlined" color="primary" />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Code</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeparator>
+          <TimelineDot variant="outlined" color="secondary" />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Sleep</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeparator>
+          <TimelineDot variant="outlined" />
+        </TimelineSeparator>
+        <TimelineContent>Repeat</TimelineContent>
+      </TimelineItem>*/}
     </div>
   );
 }

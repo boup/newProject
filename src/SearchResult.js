@@ -9,37 +9,8 @@ import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
-/*const data = [
-  {
-    id: 1,
-    line: "Parcelle Assainie",
-    color: "primary",
-    value: "Line 21",
-    info: "depart: 17:30---arr:18:15",
-  },
-  {
-    id: 2,
-    line: "Dior",
-    color: null,
-    value: "Line 21",
-    info: "depart: 17:30---arr:18:15",
-  },
-  {
-    id: 3,
-    line: "Diamelaye",
-    color: "secondary",
-    value: "Line 21",
-    info: "depart: 17:30---arr:18:15",
-  },
-  {
-    id: 4,
-    line: "VDN",
-    color: "secondary",
-    value: "Line 21",
-    info: "depart: 17:30---arr:18:15",
-  },
-];
-*/
+import {FaBus} from "react-icons/fa"
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     padding: "6px 16px",
@@ -56,21 +27,43 @@ function SearchResult(props) {
   const handdleChange = () => {
     setChange(!change);
   };
-  const da = props.datas.map((item) =>
-    item.map((item) => item.stop.map((item) => item))
-  );
-  const dat = da.map((item) => item[0]);
-  const d = dat.map((item) => item[0]);
+  console.log("bakary:",props.datas);
+  
+  const da = props.datas.map((item) =>item.map((item) => item.destination.map((item)=>item)));
+  console.log("data da",da);
+  const dat = da.map((item) => item);
+  const d = dat.map((item) => item);
   const d1 = dat.map((item) => item[item.length - 1]);
   console.log("first:", d, "last", d1);
   return (
     <div className="timeline_section">
-      {props.datas.map((item, index) => (
-        <Timeline key={index} align="alternate">
+      <Timeline align="alternate" >
+      {props.datas.map((item)=>item.map((item)=>item.destination.map((item,index)=>(
+
+        <TimelineItem>
+
+          <TimelineSeparator>
+          <TimelineDot key={index} />
+        
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>{item}</TimelineContent>
+           
+
+
+      </TimelineItem>
+        )))
+      )}
+      </Timeline>
+     {/* {props.datas.map((item, index) => (
+        <Timeline key={index} >
           {item.map((item, index) => (
-            <TimelineItem key={index}>
+
+                  
+           {/* <TimelineItem key={index}>
+              
               <TimelineOppositeContent>
-                {item.stop.map((item, index) => (
+                {item.destination.map((item, index) => (
                   <Typography key={index} variant="body2" color="textSecondary">
                     {item}
                   </Typography>
@@ -84,16 +77,18 @@ function SearchResult(props) {
                 {change && (
                   <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                      Line {item.line}
+                      <FaBus/> {item.number}
                     </Typography>
                     <Typography>Dep:15:18-Arr.18:25</Typography>
                   </Paper>
                 )}
+                
               </TimelineContent>
-            </TimelineItem>
+              
+                </TimelineItem>
           ))}
         </Timeline>
-      ))}
+      ))}*/}
     </div>
   );
 }

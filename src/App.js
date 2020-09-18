@@ -6,6 +6,8 @@ import InsideCity from "./components/insidethecity/InsiteCity";
 import InsideOrBetweenCity from "./InsideOrBetweenCity";
 import BetweenCity from "./components/betweencity/BetweenCity";
 import SearchFunction from "./components/insidethecity/SearchFunction";
+import ShowDataContainer from "./components/insidethecity/ShowDataContainer";
+
 function App() {
   return (
     <div className="App">
@@ -13,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+           
           </Route>
           <Route exact path="/city/">
             <SearchFunction />
