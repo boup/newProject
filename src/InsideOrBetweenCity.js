@@ -18,7 +18,7 @@ function InsideOrBetweenCity(props) {
             </Link>
           </div>
               */}
-          <div className="text-center">Welcome To {props.title}</div>
+          <div className="text-center">Welcome {props.title}</div>
           <div className="row text-center mb-5">
             <div className="col-6">
               <div className="card" style={{ width: "30rem", height: "20rem" }}>
@@ -26,19 +26,25 @@ function InsideOrBetweenCity(props) {
                   {/*<h5 className="card-title">dakar</h5>*/}
                   <img
                     src={outside}
-                    className="card-img-top my-0 "
+                    className="card-img-top my-0 mb-0 "
                     alt="inside"
                   />
 
-                  <a href="#" className="btn btn-secondary">
-                    <Link to="/insidecity">Inside City</Link>
+                  <a href="#" >
+                  <button
+                  type="button"
+                  className="btn btn_green btn-lg text-uppercase mr-2"
+                >
+                  <Link to="/insidecity">Inside City</Link>
+                </button>
+                 
                   </a>
                 </div>
               </div>
             </div>
             <div className="col-6">
               <div
-                className="card "
+                className="card"
                 style={{ width: "30rem", height: "20rem" }}
               >
                 <div className="card-body">
@@ -49,8 +55,14 @@ function InsideOrBetweenCity(props) {
                     alt="outside"
                   />
 
-                  <a href="#" className="btn btn-secondary">
-                    <Link to="/betweencity">Between City</Link>
+                  <a href="#" >
+                  <button
+                  type="button"
+                  className="btn btn_green btn-lg text-uppercase mr-2"
+                >
+                   <Link to="/betweencity">Between City</Link>
+                </button>
+                   
                   </a>
                 </div>
               </div>

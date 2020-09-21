@@ -5,13 +5,13 @@ import dakarMap from "../../assets/mapDakar.PNG"
 
 function InsiteCity() {
   return (
-    <div className="container-fluid text-center InsideCity">
-      <div className="row">
+    <div className="container-fluid text-center InsideCity inside_city_section">
+      <div className="row pl-0">
 <div className="col-4">
       <ShowDataContainer/>
   
 </div>
-<div className="col-8">
+<div className="col-8 pr-0">
 <img src={dakarMap} style={{width:"100%",height:"80vh"}} atl="Dakar"/>
 <div/>
 

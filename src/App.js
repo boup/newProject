@@ -7,16 +7,36 @@ import InsideOrBetweenCity from "./InsideOrBetweenCity";
 import BetweenCity from "./components/betweencity/BetweenCity";
 import SearchFunction from "./components/insidethecity/SearchFunction";
 import ShowDataContainer from "./components/insidethecity/ShowDataContainer";
-
+import Footer from "./components/insidethecity/Footer";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import SenegalMap from "./components/SenegalMap";
+import Contact from "./components/Contact";
+import Transport from "./components/Transport";
 function App() {
   return (
     <div className="App">
       <Router>
+          <Navbar/>
         <Switch>
           <Route exact path="/">
             <Home />
            
           </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/mapofsenegal">
+            <SenegalMap/>
+          </Route>
+          <Route exact path="/contact">
+          <Contact/>
+          </Route>
+          <Route exact path="/transport">
+            <Transport/>
+          </Route>
+
+
           <Route exact path="/city/">
             <SearchFunction />
           </Route>
@@ -31,6 +51,7 @@ function App() {
             <BetweenCity />
           </Route>
         </Switch>
+        <Footer/>
       </Router>
     </div>
   );

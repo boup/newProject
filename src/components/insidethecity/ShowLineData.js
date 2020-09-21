@@ -69,8 +69,10 @@ console.log("Data exported:",cityData);
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-      {cityData.map((item)=>item.number===1)&&cityData.map((item=>item.destination.map((item,index)=>(
-          <Timeline align="alternate" >
+         {/* {cityData.map((item)=>{
+  if(item.id===1){
+    return item.destination.map((item,index)=>
+    <Timeline align="alternate" >
 
         <TimelineItem>
 
@@ -85,7 +87,43 @@ console.log("Data exported:",cityData);
 
       </TimelineItem>
       </Timeline>
-        ))))}
+    );
+  } else return null;
+})}*/}
+{/*{cityData.map((item=>item.destination.map((item, index)=>{if(item.id===1) return( <Timeline >
+
+<TimelineItem>
+
+  <TimelineSeparator>
+  <TimelineDot key={index} color="primary" />
+
+  <TimelineConnector />
+</TimelineSeparator>
+<TimelineContent>{item}</TimelineContent>
+   
+
+
+</TimelineItem>
+</Timeline>
+)})))}*/}
+    {/**/} {cityData.map((item=>item.destination.map((item,index)=>(
+         <Timeline align="alternate" >
+
+        <TimelineItem>
+
+          <TimelineSeparator>
+          <TimelineDot key={index} color="primary" />
+        
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>{item}</TimelineContent>
+           
+
+
+      </TimelineItem>
+      </Timeline>
+    ))))}
+      
           </Typography>
         </AccordionDetails>
       </Accordion>

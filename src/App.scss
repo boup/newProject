@@ -1,4 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+:root {
+  --mainDark: #242325;
+  --mainGreen: #61e786;
+  --mainWhite: #fff;
+  --mainGrey: #eeeeee;
+}
+/* navbar */
+.navbar {
+  background: var(--mainDark) !important;
+}
+
+.nav-item {
+  transition: all 1s ease-in-out;
+}
+
+.nav-item:hover {
+  border-bottom: 0.1rem solid var(--mainGreen);
+}
+
+.active_link {
+  border-bottom: 0.1rem solid var(--mainGreen);
+}
+
+.phone-icon {
+  color: var(--mainGreen);
+  border: 0.1rem solid var(--mainGreen);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+/* end of navbar */
+/* header */
+
+/* global */
+
+.title-parallogram {
+  background: var(--mainGreen);
+  color: var(--mainWhite) !important;
+  padding: 0.5rem 2rem;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+.text-green {
+  color: var(--mainGreen);
+}
+
+.btn_green {
+  color: var(--mainDark);
+  border: 0.1rem solid var(--mainGreen);
+  background: var(--mainGreen);
+}
+.btn_green:hover {
+  background: var(--mainGreen);
+  color: var(--mainWhite);
+}
+
+/* end of global */
+
+/* navbar */
+.navbar {
+  background: var(--mainDark) !important;
+}
+
+.nav-item {
+  transition: all 1s ease-in-out;
+}
+
+.nav-item:hover {
+  border-bottom: 0.1rem solid var(--mainGreen);
+}
+
+.active_link {
+  border-bottom: 0.1rem solid var(--mainGreen);
+}
+
+.phone-icon {
+  color: var(--mainGreen);
+  border: 0.1rem solid var(--mainGreen);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+/* end of navbar */
+/* header */
+
+.video-background {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 67.64px);
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  overflow: hidden;
+}
+
+.text {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  color: #fff;
+}
+
+
 .Home {
+  //height: 20vh !important;
   list-style: none;
   background-color: rgba(0, 0, 0, 0.05);
   background-image: linear-gradient(
@@ -58,7 +162,7 @@ ul {
 #notebooks span {
   display: block;
   position: absolute;
-  background: #ffd32e;
+ background: #ffd32e;
   bottom: -35px;
   left: -1px;
   width: 360px;
@@ -68,6 +172,110 @@ ul {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: inset 1px 1px rgba(255, 255, 255, 0.5);
 }
+/* about section */
+
+.about-pictures {
+  position: relative;
+}
+
+.about-image {
+  position: absolute;
+  width: 150px;
+  transition: all 2s ease;
+  opacity: 0.9;
+}
+
+.img-1 {
+  left: 0%;
+  top: 0%;
+}
+
+.img-2 {
+  left: 20%;
+  top: 20%;
+  z-index: 10;
+}
+
+.img-3 {
+  left: 40%;
+  top: 45%;
+  z-index: 20;
+}
+
+.img-4 {
+  left: 40%;
+  top: 0%;
+}
+
+.img-5 {
+  left: 0%;
+  top: 45%;
+}
+
+.about-image:hover {
+  outline: 10px solid var(--mainGreen);
+  outline-offset: 0.8rem;
+  transform: scale(1.6);
+  z-index: 30;
+  opacity: 1;
+}
+
+.about-pictures:hover .about-image:not(:hover) {
+  opacity: 0.5;
+}
+/*End of about section*/
+
+/* contact  section */
+
+#contact .form-control {
+  border-radius: 0;
+  border: 2px solid #1e1e1e;
+}
+
+#contact button {
+  border-radius: 0;
+  border: 2px solid #1e1e1e;
+}
+
+#contact .row {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  #contact iframe {
+    margin-bottom: 15px;
+  }
+}
+/*End of contact section*/
+/* transport */
+
+.car-card {
+  border-radius: 0 !important;
+}
+
+.car-img {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* ticket */
+
+.ticket {
+  background: var(--mainGrey);
+}
+
+.carousel-control-prev {
+  font-size: 2.5rem;
+  color: var(--mainDark);
+  transform: translateX(-200%);
+}
+
+.carousel-control-next {
+  font-size: 2.5rem;
+  color: var(--mainDark);
+  transform: translateX(200%);
+}
+/*End */
 /* Animation*/
 .fa-arrow-left {
   li:link {
@@ -133,9 +341,13 @@ ul {
 
 .timeline_section {
   position: absolute;
-  bottom: 200px;
-  left: 50px;
+  z-index: 200;
+  bottom: 600px;
+margin-top: 10rem;
+  left: -5px;
+  top:30px;
   width: 500px !important;
+  //background-color: white;
   li {
     list-style: none;
     //background-color: rgba(0, 0, 0, 0.05);
@@ -165,5 +377,22 @@ ul {
 /*InsideCity*/
 .InsideCity{
   background-color: #3d2b56;
-  border-right-color: 2px solid orangered;
+  margin-top: 4rem;
 }
+/* footer */
+
+.page-footer {
+  background: var(--mainDark);
+  color: var(--mainWhite);
+}
+
+.site {
+  text-decoration: none !important;
+  color: var(--mainGreen);
+}
+
+.site:hover {
+  color: var(--mainGreen);
+  text-decoration: none !important;
+}
+/*end of footer*/

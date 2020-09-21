@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     width: 500,
+    height:550
   },
 }));
 
@@ -84,10 +85,10 @@ export default function ShowDataContainer() {
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-        <TabPanel value={value} index={0} dir={theme.direction}>
+        <TabPanel value={value} index={0} dir={theme.direction} className={classes.root} >
         <SearchInput/>
         </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
+        <TabPanel value={value} index={1} dir={theme.direction} className={classes.root}>
          <ShowLineData/>
         </TabPanel>
         

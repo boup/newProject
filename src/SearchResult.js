@@ -27,23 +27,20 @@ function SearchResult(props) {
   const handdleChange = () => {
     setChange(!change);
   };
-  console.log("bakary:",props.datas);
-  
-  const da = props.datas.map((item) =>item.map((item) => item.destination.map((item)=>item)));
-  console.log("data da",da);
-  const dat = da.map((item) => item);
-  const d = dat.map((item) => item);
-  const d1 = dat.map((item) => item[item.length - 1]);
-  console.log("first:", d, "last", d1);
+    
+
   return (
-    <div className="timeline_section">
-      <Timeline align="alternate" >
-      {props.datas.map((item)=>item.map((item)=>item.destination.map((item,index)=>(
+  
+    <div className=" container-fluid timeline_section ">
+   {props.line?  <strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1"> {props.line}</span></div></strong>:null}
+      <Timeline align="alternate"className="Home" >
+      {/*{props.datas.map((item)=>item.map((item)=>item.destination.map((item,index)=>(*/}
+      {props.datas.map((item,index)=>item.map((item)=>(
 
         <TimelineItem>
 
           <TimelineSeparator>
-          <TimelineDot key={index} />
+          <TimelineDot key={index} color="primary" />
         
           <TimelineConnector />
         </TimelineSeparator>
@@ -52,7 +49,7 @@ function SearchResult(props) {
 
 
       </TimelineItem>
-        )))
+        ))
       )}
       </Timeline>
      {/* {props.datas.map((item, index) => (
@@ -90,6 +87,7 @@ function SearchResult(props) {
         </Timeline>
       ))}*/}
     </div>
+   
   );
 }
 export default SearchResult;

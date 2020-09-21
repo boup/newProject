@@ -13,9 +13,10 @@ function SearchInput(props) {
   const [suggestion, setSuggestion] = React.useState([]);
   const [suggestion1, setSuggestion1] = React.useState([]);
   const [filtered, setFilteredData] = React.useState([]);
+  const [lineNb, setLineNb] = React.useState([]);
   //const{lineData}=React.useContext(DataContext);
   const history = useHistory();
-  const line= lineData
+  const line= lineData;
   console.log("Line data:",line);
   var myarray = line.map((arr) => arr.destination);
   console.log("myarray:",myarray);
@@ -23,11 +24,9 @@ function SearchInput(props) {
   { 
     /* Function which transform array of object into array*/
   }
-  //var finalArray = cities.map((arr) => arr.cityName);
-  //var Array1 = stops.map((arr) => arr.stop);
-  const fiArray1 = myarray.flat(1);
  
- console.log("Flat array",fiArray1);
+ 
+// console.log("Flat array",fiArray1);
   //get unique value;
   function getUnique(array) {
     var uniqueArray = [];
@@ -40,7 +39,7 @@ function SearchInput(props) {
     }
     return uniqueArray;
   }
-  
+  const fiArray1 = myarray.flat(1);
   var finalArray1 = getUnique(fiArray1);
   console.log("final stort",finalArray1);
   
@@ -106,13 +105,20 @@ function SearchInput(props) {
   const ClickMe = (e) => {
     if (text !== "" && text1 !== "") {
       const newArray = lineData.filter((item) =>item.destination.includes(`${text}`) && item.destination.includes(`${text1}`));
-     
-      const data = newArray;
+      var lineNumber = newArray.map((arr) => arr.number);
+      var result1= newArray.map((item)=>item.destination).flat(1);
+      var result=getUnique(result1)
+      var findPoint= result.map((item)=>{if(result.indexOf(item)>= result.indexOf(`${text}`) && result.indexOf(item)<=result.indexOf(`${text1}`))
+      return item;
+    })
+      const data = getUnique(findPoint);
+      const linedata=lineNumber;
       filtered.push(data);
-      //alert(`Hello from ${text} to ${text1}`);
+      lineNb.push(linedata);
+      setLineNb([...lineNb]);
       setFilteredData([...filtered]);
-      setValue("");
-      setValue1("");
+     // setValue("");
+     // setValue1("");
       console.log("Filtered array is",filtered);
       return (
         <div>
@@ -160,7 +166,7 @@ function SearchInput(props) {
       </div>
     
 
-      <div>{ <SearchResult datas={filtered} />}</div>
+      <div>{ <SearchResult datas={filtered} line={lineNb} />}</div>
     </>
   );
 }
