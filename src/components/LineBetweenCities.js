@@ -91,3 +91,4 @@ price:3000,
     
     }
 ]
+export default data;

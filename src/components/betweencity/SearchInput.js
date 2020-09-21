@@ -1,12 +1,12 @@
 import React from "react";
 import { useHistory, useParams } from "react-router-dom";
-import lineData from "../../Cities";
+import lineData from "../LineBetweenCities";
 import { Link } from "react-router-dom";
 import { BsFillForwardFill } from "react-icons/bs";
 //import DisplayStop from "./DisplayStop";
 //import SearchFunction from "./SearchFunction";
-import SearchResult from "../../SearchResult";
-//import {DataContext} from "../../context/context-api"
+import SearchResult from "./SearchResult";
+import {DataContext} from "../../context/context-api"
 function SearchInput(props) {
   const [text, setValue] = React.useState("");
   const [text1, setValue1] = React.useState("");

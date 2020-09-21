@@ -4,7 +4,6 @@ import Home from "./Home";
 import "./App.scss";
 import InsideCity from "./components/insidethecity/InsiteCity";
 import InsideOrBetweenCity from "./InsideOrBetweenCity";
-import BetweenCity from "./components/betweencity/BetweenCity";
 import SearchFunction from "./components/insidethecity/SearchFunction";
 import ShowDataContainer from "./components/insidethecity/ShowDataContainer";
 import Footer from "./components/insidethecity/Footer";
@@ -13,6 +12,7 @@ import About from "./components/About";
 import SenegalMap from "./components/SenegalMap";
 import Contact from "./components/Contact";
 import Transport from "./components/Transport";
+import BetweenCity from "./components/betweencity/BetweenCity";
 function App() {
   return (
     <div className="App">
@@ -48,7 +48,7 @@ function App() {
             <InsideCity />
           </Route>
           <Route exact path="/betweencity">
-            <BetweenCity />
+            <BetweenCity/>
           </Route>
         </Switch>
         <Footer/>
