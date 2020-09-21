@@ -45,8 +45,9 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
-    height:550
+    width: 400,
+    height:650,
+
   },
 }));
 
@@ -86,7 +87,7 @@ export default function ShowDataContainer() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction} className={classes.root} >
-        <SearchInput/>
+       <SearchInput/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction} className={classes.root}>
          <ShowLineData/>

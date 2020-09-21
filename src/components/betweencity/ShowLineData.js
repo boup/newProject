@@ -69,44 +69,7 @@ console.log("Data exported:",cityData);
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-         {/* {cityData.map((item)=>{
-  if(item.id===1){
-    return item.destination.map((item,index)=>
-    <Timeline align="alternate" >
-
-        <TimelineItem>
-
-          <TimelineSeparator>
-          <TimelineDot key={index} color="primary" />
-        
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>{item}</TimelineContent>
-           
-
-
-      </TimelineItem>
-      </Timeline>
-    );
-  } else return null;
-})}*/}
-{/*{cityData.map((item=>item.destination.map((item, index)=>{if(item.id===1) return( <Timeline >
-
-<TimelineItem>
-
-  <TimelineSeparator>
-  <TimelineDot key={index} color="primary" />
-
-  <TimelineConnector />
-</TimelineSeparator>
-<TimelineContent>{item}</TimelineContent>
-   
-
-
-</TimelineItem>
-</Timeline>
-)})))}*/}
-    {/**/} {cityData.map((item=>item.destination.map((item,index)=>(
+         {cityData.map((item=>item.destination.map((item,index)=>(
          <Timeline align="alternate" >
 
         <TimelineItem>
@@ -127,30 +90,8 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P2</span></div></strong>Daroukhane-Leclerc</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P3</span></div></strong>Terminus Dieuppeul-Allées Canard-Esso</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+     
+     
     </div>
   );
 }

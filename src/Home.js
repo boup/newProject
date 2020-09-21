@@ -66,9 +66,9 @@ function Home(props) {
             <div className="video-background">
               <div className="video-wrap">
                 <div id="video">
-                  <video id="video-item" autoplay muted loop playsinline>
+                 { /*<video id="video-item" autoplay muted loop playsinline>
                     <source src={video} type="video/mp4" />
-                  </video>
+  </video>*/}
                 </div>
               </div>
             </div>

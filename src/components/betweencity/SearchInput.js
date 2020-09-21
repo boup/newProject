@@ -166,7 +166,7 @@ function SearchInput(props) {
       </div>
     
 
-      <div>{ <SearchResult datas={filtered} line={lineNb} />}</div>
+      {<SearchResult datas={filtered} line={lineNb} />}
     </>
   );
 }
