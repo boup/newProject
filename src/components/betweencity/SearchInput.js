@@ -117,8 +117,8 @@ function SearchInput(props) {
       lineNb.push(linedata);
       setLineNb([...lineNb]);
       setFilteredData([...filtered]);
-     // setValue("");
-     // setValue1("");
+    setValue("");
+    setValue1("");
       console.log("Filtered array is",filtered);
       return (
         <div>

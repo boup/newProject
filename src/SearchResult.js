@@ -27,12 +27,13 @@ function SearchResult(props) {
   const handdleChange = () => {
     setChange(!change);
   };
-    
+    const data = props.line;
+    console.log(data);
 
   return (
   
     <div className=" container-fluid timeline_section ">
-   {props.line?  <strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1"> {props.line}</span></div></strong>:null}
+   {props.line?props.line.map((item,index)=>(<strong><div key={index} className="btn btn-outline-danger">{item.map((item,index)=><span key={index} className="mb-4" style={{color:"#362023"}}><FaBus/>P {item}</span>)}<span className="pl-1 mt-1"> </span></div></strong>)):<div>No Line Disponible</div>}
       <Timeline align="alternate"className="Home" >
       {/*{props.datas.map((item)=>item.map((item)=>item.destination.map((item,index)=>(*/}
       {props.datas.map((item,index)=>item.map((item)=>(
