@@ -157,7 +157,7 @@ function SearchInput(props) {
         {renderSuggession()}
         <span className="Home">Suggestions: {suggestion.length}</span>
         <div
-          className="btn btn-success text-warning text-uppercase"
+          className="btn btn-success ml-1 mb-1 text-warning text-uppercase"
           onClick={letGo}
         >
           <strong>go</strong>

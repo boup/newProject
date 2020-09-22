@@ -37,6 +37,7 @@ const AccordionSummary = withStyles({
     borderBottom: '1px solid rgba(0, 0, 0, .125)',
     marginBottom: -1,
     minHeight: 56,
+   
     '&$expanded': {
       minHeight: 56,
     },
@@ -63,10 +64,10 @@ console.log("Data exported:",cityData);
   };
 
   return (
-    <div    >
+    <div >
       <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Terminus des Parcelles-Place Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4 m-0" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong> T. des Parcelles - Place Leclerc </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -87,9 +88,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P2</span></div></strong>Daroukhane - Leclerc </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -110,9 +111,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P4</span></div></strong>T. Dieuppeul-Allées Canard-Esso </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -133,9 +134,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P5</span></div></strong>T. Guédiawaye-Palais de Justice </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -156,9 +157,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P6</span></div></strong>Cambéréne 2-Palais 2 </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -179,9 +180,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P7</span></div></strong>T. Ouakam-Palais de Justice </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -202,9 +203,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P8</span></div></strong>T. Aéroport-Palais de Justice </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -225,9 +226,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel8'} onChange={handleChange('panel8')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P9</span></div></strong>Liberté 6-Palais 2 </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -248,9 +249,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel9'} onChange={handleChange('panel9')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P10</span></div></strong>T. Dieuppeul-Palais 2 </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -271,9 +272,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel10'} onChange={handleChange('panel10')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P11</span></div></strong>T. Keur Massar- T. Lat-Dior </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -294,9 +295,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel11'} onChange={handleChange('panel11')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P12</span></div></strong>T. Guédiawaye-Palais de Justice </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -317,9 +318,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel12'} onChange={handleChange('panel12')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P13</span></div></strong>T. Dieuppeul-Palai 2 </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -340,9 +341,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel13'} onChange={handleChange('panel13')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P15</span></div></strong>T. Rufisque-Palai 1 </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -363,9 +364,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel14'} onChange={handleChange('panel14')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P18</span></div></strong>T. Dieuppeul-T. Dieuppeul </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -386,9 +387,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel15'} onChange={handleChange('panel15')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P20</span></div></strong>T. Dieuppeul-Terminus Dieuppeul </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -409,9 +410,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel16'} onChange={handleChange('panel16')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P23</span></div></strong>T. des Parcelles-Palais de Justice </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -432,9 +433,9 @@ console.log("Data exported:",cityData);
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion square expanded={expanded === 'panel17'} onChange={handleChange('panel17')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P1</span></div></strong>Daroukhane-Leclerc </Typography>
+          <Typography><strong><div className="btn btn-outline-danger"><span className="mb-4" style={{color:"#362023"}}><FaBus/></span><span className="pl-1 mt-1">P121</span></div></strong>T. Scat Urban-Terminus Leclerc </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
